@@ -4,6 +4,9 @@ import os
 from dotenv import load_dotenv
 import asyncio
 import aiosqlite
+import logging
+
+discord.utils.setup_logging()
 
 load_dotenv()
 token = os.getenv("TOKEN")
@@ -12,7 +15,7 @@ class MyBot(commands.Bot):
     def __init__(self):
             super().__init__(
             command_prefix="b!",
-            intents=discord.Intents.default(),
+            intents=discord.Intents.all(),
             application_id=1028707610238668851,
         )
     
