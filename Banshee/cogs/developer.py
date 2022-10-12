@@ -9,6 +9,7 @@ class developer(commands.Cog):
     @commands.is_owner()
     async def sync_commands(self, ctx):
         await self.client.tree.sync()
+        await ctx.reply("Done!")
 
 async def setup(client):
     await client.add_cog(developer(client))
