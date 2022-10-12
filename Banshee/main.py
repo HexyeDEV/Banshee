@@ -17,11 +17,11 @@ class MyBot(commands.Bot):
             command_prefix="b!",
             intents=discord.Intents.all(),
             application_id=1028707610238668851,
+            activity=discord.Game(name="/help"),
         )
     
     async def on_ready(self):
         print(f"Logged in As {self.user}")
-        await client.change_presence(activity=discord.Game("/help"))
 
     async def setup_hook(self):
         for file in os.listdir("./cogs"):
@@ -30,9 +30,6 @@ class MyBot(commands.Bot):
         for file in os.listdir("./events"):
             if file.endswith(".py"):
                 await self.load_extension(f"events.{file.replace('.py', '')}")
-        self.db = await aiosqlite.connect("banshee.db")
-        await self.tree.sync()
-
 client = MyBot()
 
 async def main():
