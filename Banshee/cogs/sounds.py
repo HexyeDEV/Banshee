@@ -67,7 +67,7 @@ class sounds(commands.Cog):
         channel = None
         if voice_channel != None:
             channel = voice_channel.name
-            await interaction.response.send_message(f"🎃 Playing Loud Noise in {channel}. 🎃", ephemeral=True)
+            await interaction.response.send_message(f"🎃 Playing Shiving Sound in {channel}. 🎃", ephemeral=True)
             vc = await voice_channel.connect()
             vc.play(discord.FFmpegPCMAudio("./assets/shiver.mp3"), after=lambda: print('done'))
             while vc.is_playing():
