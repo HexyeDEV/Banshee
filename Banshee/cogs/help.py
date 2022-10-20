@@ -9,12 +9,12 @@ class help(commands.Cog):
     @app_commands.command(name="help", description="Show list of commands.")
     async def help(self, interaction: discord.Interaction):
         embed = discord.Embed(title="Help Command", description="Banshee's commands")
-        embed.add_field("/basement <user>", "Send someone to my basement")
-        embed.add_field("/prank", "Send a prank to the server.")
-        embed.add_field("/sounds scary", "Play a scary sound.")
-        embed.add_field("/sounds loud", "Play a loud sound.")
-        embed.add_field("/sounds horrifying", "Play an horrifying sound.")
-        embed.add_field("/sounds shiver", "Play a shiving sound.")
+        embed.add_field(name="/basement <user>", value="Send someone to my basement")
+        embed.add_field(name="/prank", value="Send a prank to the server.")
+        embed.add_field(name="/sounds scary", value="Play a scary sound.")
+        embed.add_field(name="/sounds loud", value="Play a loud sound.")
+        embed.add_field(name="/sounds horrifying", value="Play an horrifying sound.")
+        embed.add_field(name="/sounds shiver", value="Play a shiving sound.")
         await interaction.response.send_message(embed=embed)
 
 async def setup(client):
